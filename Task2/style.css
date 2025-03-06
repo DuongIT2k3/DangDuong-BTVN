@@ -7,7 +7,7 @@ html{
     font-size: 16px;
     color: #0f0f34;
     font-weight: 700;
-    font-family: "Mulish", sans-serif;
+    font-family: "Mulish", serif;
     
 }
 div{
@@ -76,7 +76,7 @@ a{
 }
 .menu >li:hover > .sub-menu{
     display: block;
-    background: #eff1ff;
+    background: #fff;
     border: 1px solid #dde1f9;
 }
 

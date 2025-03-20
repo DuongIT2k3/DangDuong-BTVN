@@ -1,5 +1,5 @@
-let weight = 60;
-let height = 1.7;
+let weight = parseFloat(prompt("Nhập số cân nặng: "));
+let height = parseFloat(prompt("Nhập số chiều cao: "));
 function calcBMI(weight,height){
     let BMI = weight / height ** 2;
     if(BMI < 18.5){

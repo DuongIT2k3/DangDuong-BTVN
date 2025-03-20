@@ -1,3 +1,6 @@
+let a = parseFloat(prompt("Nhập số a: "));
+let b = parseFloat(prompt("Nhập số b: "));
+let c = parseFloat(prompt("Nhập số c: "));
 function sort(a,b,c){
     if(a > b){
         a = a * b;
@@ -17,4 +20,4 @@ function sort(a,b,c){
     console.log(a,b,c);
 }
 
-sort(5,4,3);
+sort(a,b,c);

@@ -5,5 +5,6 @@ function swapNumber(a, b){
     console.log(a, b);
     return {a , b};
 }
-
-swapNumber(2,3);
+let a = parseFloat(prompt("Nhập số a: "));
+let b = parseFloat(prompt("Nhập số b: "));
+swapNumber(a, b);

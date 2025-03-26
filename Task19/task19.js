@@ -11,4 +11,4 @@ function printIsoscelesTriangle(n, character){
     }
 }
 
-printIsoscelesTriangle(5,"*");
+printIsoscelesTriangle(6,"*");

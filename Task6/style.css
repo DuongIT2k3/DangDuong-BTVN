@@ -18,28 +18,7 @@ html {
   height: 900px;
   /* background: #d8dae2; */
 }
-.ellipse::after {
- content: "";
-  width: 310px;
-  height: 294px;
-  position: absolute;
-  border-radius: 50%;
-  background:linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), #E5E7F0;
-  bottom: 650px;
-  left: 70%;
-  z-index: -1;
-}
-.ellipse2::before {
-  content: "";
-  width: 433px;
-  position: absolute;
-  border-radius: 50%;
-  background:linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), linear-gradient(0deg, #E5E7F0 0%, #E5E7F0 100%), #E5E7F0;
-  height: 390px;
-  top: 620px;
-  left: 20%;
-  z-index: -1;
-}
+
 
 .container {
   width: 1550px;

@@ -1,6 +1,6 @@
 function taxiBill(km){
     if(isNaN(km) || km <=0){
-        console.log("Số km không hợp lệ");
+        document.getElementById("result").innerHTML = "Số km không hợp lệ";
         return
     }
     let cost = 0;
@@ -11,7 +11,7 @@ function taxiBill(km){
     } else{
         cost = 10000 + 29 * 8000 + (km - 30) * 7000;
     }
-    console.log(`Số tiền cần trả là: ${cost} VNĐ`);
+    document.getElementById("result").innerHTML = `Số tiền phải trả là: ${cost}VNĐ`;
 }
 
 let km = parseInt(prompt("Nhập số km: "));

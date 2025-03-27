@@ -1,9 +1,12 @@
 function isSameSign(a,b){
-    return (a >= 0 && b >= 0) || (a < 0 && b < 0);
-
+    if((a >= 0 && b >= 0) || (a < 0 && b < 0)){
+        document.getElementById("result").innerHTML = "true";
+    }else{
+        document.getElementById("result").innerHTML = "false";
+    }
 }
 
 let a = parseInt(prompt("Nhập số a: "));
 let b = parseInt(prompt("Nhập số b: "));
 
-console.log(isSameSign(a,b));
+isSameSign(a,b);

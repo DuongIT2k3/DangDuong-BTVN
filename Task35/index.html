@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task35: Đồng hồ số</title>
+    <style>
+        #clock {
+        font-size: 2em;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+</head>
+<body>
+    <div id="clock"></div>
+    <script>
+        setInterval(() =>{
+            const now = new Date();
+            const clock = document.getElementById("clock");
+            clock.innerHTML = (now.getHours() + `:` + now.getMinutes() + `:` + now.getSeconds());
+            document.body.appendChild(clock);
+        },1000)
+    </script>
+</body>
+</html>

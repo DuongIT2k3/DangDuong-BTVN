@@ -1,12 +1,12 @@
 // bài 1: Viết một hàm getData nhận vào một callback và gọi callback đó sau 1 giây với dữ liệu là mảng [1, 2, 3, 4].
-function getData(callback){
-    callback = setTimeout(() => {
-        let arr = [1,2,3,4];
-        console.log(arr)
+function getData1(callback){
+    setTimeout(() => {
+        const arr = [1,2,3,4];
+        callback(arr);
     },1000)
 }
-getData((arr) =>{
-    console.log(arr);
+getData1((data) =>{
+    console.log(data);
 })
 
 // bài 2: Viết một hàm getData  sử dụng Promise

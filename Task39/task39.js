@@ -27,11 +27,8 @@ getData().then((data) => console.log(data))
 
 function getData() {
     return new Promise((resolve) =>{
-        setTimeout(() =>{
-            const arr = [1,2,3,4];
-            resolve(arr);
-        },1000)
-    });
+        resolve([1,2,3,4])
+    })
 }
 
 async function callData() {

@@ -101,34 +101,51 @@ function removeStudent(id){
 }
 
 function edit(id) {
-  studentLocal = getData();
-  studentLocal = studentLocal.find((student) => student.id === id);
-  if (!studentLocal) {
-    errorMessage.innerHTML = "Không tìm thấy sinh viên";
-    return;
-  }
-  name.value = studentLocal.name;
-  math.value = studentLocal.math;
-  english.value = studentLocal.english;
-  science.value = studentLocal.science;
-  btn.innerHTML = "Cập nhật";
-  btn.onclick = function () {
-    if (validate()) {
-      studentLocal.math = math.value;
-      studentLocal.english = english.value;
-      studentLocal.science = science.value;
-      setData(studentLocal);
-      render(studentLocal);
-      btn.innerHTML = "Thêm sinh viên";
-      name.value = "";
-      math.value = "";
-      english.value = "";
-
-      science.value = "";
-      errorMessage.innerHTML = "";
-      btn.onclick = addStudent;
+    studentLocal = getData();
+    const student = studentLocal.find((s) => s.id === id);
+    if (!student) {
+        errorMessage.innerHTML = "Không tìm thấy sinh viên";
+        return;
     }
-  };
+    name.value = student.name;
+    math.value = student.math;
+    english.value = student.english;
+    science.value = student.science;
+    name.setAttribute('readonly', true); // Không cho phép chỉnh sửa tên
+    btn.innerHTML = "Cập nhật";
+    btn.onclick = function () {
+        if (validate()) {
+            const updatedStudent = {
+                ...student,
+                math: math.value,
+                english: english.value,
+                science: science.value
+            };
+            const updatedData = studentLocal.map(s => s.id === id ? updatedStudent : s);
+            setData(updatedData);
+            render(getData());
+            btn.innerHTML = "Thêm sinh viên";
+            name.removeAttribute('readonly'); // Bỏ readonly để thêm sinh viên mới
+            name.value = "";
+            math.value = "";
+            english.value = "";
+            science.value = "";
+            errorMessage.innerHTML = "";
+            btn.onclick = addStudent;
+        }
+    };
+}
+
+function validate() {
+    if (!math.value || !english.value || !science.value) {
+        errorMessage.innerHTML = "Vui lòng nhập đầy đủ điểm";
+        return false;
+    }
+    if (math.value < 0 || math.value > 10 || english.value < 0 || english.value > 10 || science.value < 0 || science.value > 10) {
+        errorMessage.innerHTML = "Điểm phải từ 0 đến 10";
+        return false;
+    }
+    return true;
 }
 
 
